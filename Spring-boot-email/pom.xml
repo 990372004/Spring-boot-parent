@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.chen</groupId>
-	<artifactId>SpringBoot-email</artifactId>
+	<artifactId>Spring-boot-email</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>SpringBoot-email</name>
+	<name>Spring-boot-email</name>
 	<description>Email project for Spring Boot</description>
 
 	<properties>
