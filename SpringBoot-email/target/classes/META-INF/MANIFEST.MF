@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Implementation-Title: SpringBoot-email
+Implementation-Version: 0.0.1-SNAPSHOT
+Built-By: 123
+Implementation-Vendor-Id: com.chen
+Build-Jdk: 1.8.0_171
+Implementation-URL: https://projects.spring.io/spring-boot/#/spring-bo
+ ot-starter-parent/SpringBoot-email
+Created-By: Maven Integration for Eclipse
+
