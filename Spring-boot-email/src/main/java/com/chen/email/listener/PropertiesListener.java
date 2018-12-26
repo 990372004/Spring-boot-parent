@@ -11,7 +11,6 @@ import com.chen.email.config.PropertiesListenerConfig;
  * @date 2018-12-26 03:04:40
  */
 public class PropertiesListener implements ApplicationListener<ApplicationStartedEvent> {
-
     private String propertyFileName;
 
     public PropertiesListener(String propertyFileName) {
