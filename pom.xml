@@ -72,7 +72,6 @@
 	</build>
 
 	<modules>
-		
-		<module>../SpringBoot-email</module>
+		<module>Spring-boot-email</module>
 	</modules>
 </project>
