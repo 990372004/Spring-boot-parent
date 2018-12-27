@@ -17,3 +17,23 @@
       
 3、无论是kafka集群，还是producer和consumer都依赖于zookeeper来保证系统可用性集群保存一些meta信息。
 	  配置：由于kafka依赖于zookeeper ，故先需要安装zookeeper ，然后安装kafka，集成配置端引用
+	  
+## Spring-boot-mybatis
+1、mybatis-spring-boot-starter 1.3.2 mybatis支持包
+
+2、druid-spring-boot-starter 1.1  druid数据源
+
+3、pagehelper 5 分页插件 
+
+4、mysql-connector-java 8  数据库连接包
+
+5、log4j 1.2  日志
+
+
+
+
+
+
+
+
+
