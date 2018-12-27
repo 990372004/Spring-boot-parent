@@ -13,7 +13,9 @@
 		<maven-resources-plugin.version>2.4.3</maven-resources-plugin.version>
 		<!-- spring-boot -->
 		<spring-boot-dependencies.version>2.1.1.RELEASE</spring-boot-dependencies.version>
+		<!-- kafka -->
 		<spring-kafka.version>2.2.2.RELEASE</spring-kafka.version>
+		<kafka-streams.version>2.1.0</kafka-streams.version>
 		<mybatis-spring-boot-starter.version>1.3.2</mybatis-spring-boot-starter.version>
 	</properties>
 
@@ -43,6 +45,18 @@
 				<artifactId>spring-kafka</artifactId>
 				<version>${spring-kafka.version}</version>
 			</dependency>
+			<dependency>
+				<groupId>org.apache.kafka</groupId>
+				<artifactId>kafka-streams</artifactId>
+				<version>${kafka-streams.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework.kafka</groupId>
+				<artifactId>spring-kafka-test</artifactId>
+				<scope>test</scope>
+				<version>${spring-kafka.version}</version>
+			</dependency>
+			
 
 
 		</dependencies>
