@@ -97,5 +97,6 @@
 	<modules>
 		<module>Spring-boot-email</module>
 		<module>Spring-boot-kafka</module>
+		<module>Spring-boot-mybatis</module>
 	</modules>
 </project>
