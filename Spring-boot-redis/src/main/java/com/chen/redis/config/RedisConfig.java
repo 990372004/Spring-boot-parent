@@ -12,11 +12,14 @@ import org.springframework.data.redis.connection.RedisConnectionFactory;
 import org.springframework.data.redis.connection.jedis.JedisConnectionFactory;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.core.StringRedisTemplate;
-import org.springframework.data.redis.serializer.JdkSerializationRedisSerializer;
+import org.springframework.data.redis.serializer.Jackson2JsonRedisSerializer;
 import org.springframework.data.redis.serializer.StringRedisSerializer;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import com.chen.redis.properties.RedisProperties;
+import com.fasterxml.jackson.annotation.JsonAutoDetect;
+import com.fasterxml.jackson.annotation.PropertyAccessor;
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 import redis.clients.jedis.JedisPool;
 import redis.clients.jedis.JedisPoolConfig;
@@ -75,30 +78,49 @@ public class RedisConfig {
 	public RedisTemplate<Object, Object> redisTemplate(RedisConnectionFactory redisConnectionFactory) {
 		RedisTemplate<Object, Object> template = new RedisTemplate<Object, Object>();
 		template.setConnectionFactory(redisConnectionFactory);
+		// 使用Jackson2JsonRedisSerializer来序列化和反序列化redis的value值
+		Jackson2JsonRedisSerializer<Object> serializer = new Jackson2JsonRedisSerializer<Object>(Object.class);
+		log.info("==============obj:+Object.class.getName()");
+		ObjectMapper mapper = new ObjectMapper();
+		mapper.setVisibility(PropertyAccessor.ALL, JsonAutoDetect.Visibility.ANY);
+		mapper.enableDefaultTyping(ObjectMapper.DefaultTyping.NON_FINAL);
+		serializer.setObjectMapper(mapper);
+		template.setValueSerializer(serializer);
+		// 使用StringRedisSerializer来序列化和反序列化redis的key值
+		template.setKeySerializer(new StringRedisSerializer());
+		template.afterPropertiesSet();
 		template.setEnableTransactionSupport(true);
 		return template;
 	}
 
 	@Bean
 	@ConditionalOnMissingBean(name = "stringRedisTemplate")
-	public StringRedisTemplate stringRedisTemplate()
-			throws UnknownHostException {
+	public StringRedisTemplate stringRedisTemplate() throws UnknownHostException {
 		StringRedisTemplate template = new StringRedisTemplate();
+		Jackson2JsonRedisSerializer<Object> jackson2JsonRedisSerializer = new Jackson2JsonRedisSerializer<Object>(
+				Object.class);
+		ObjectMapper om = new ObjectMapper();
+		om.setVisibility(PropertyAccessor.ALL, JsonAutoDetect.Visibility.ANY);
+		om.enableDefaultTyping(ObjectMapper.DefaultTyping.NON_FINAL);
+		jackson2JsonRedisSerializer.setObjectMapper(om);
+
 		template.setConnectionFactory(this.connectionFactory());
 		template.setKeySerializer(new StringRedisSerializer());
-		template.setValueSerializer(new JdkSerializationRedisSerializer());
+		template.setValueSerializer(jackson2JsonRedisSerializer);
 		template.setHashKeySerializer(new StringRedisSerializer());
-		template.setHashValueSerializer(new JdkSerializationRedisSerializer());
+		template.setHashValueSerializer(jackson2JsonRedisSerializer);
+		template.afterPropertiesSet();
 		return template;
 	}
-//	@Bean
-//	@ConditionalOnMissingBean(name = "stringRedisTemplate")
-//	public StringRedisTemplate stringRedisTemplate(RedisConnectionFactory redisConnectionFactory)
-//			throws UnknownHostException {
-//		StringRedisTemplate template = new StringRedisTemplate();
-//		template.setConnectionFactory(redisConnectionFactory);
-//		return template;
-//	}
+	// @Bean
+	// @ConditionalOnMissingBean(name = "stringRedisTemplate")
+	// public StringRedisTemplate stringRedisTemplate(RedisConnectionFactory
+	// redisConnectionFactory)
+	// throws UnknownHostException {
+	// StringRedisTemplate template = new StringRedisTemplate();
+	// template.setConnectionFactory(redisConnectionFactory);
+	// return template;
+	// }
 
 	// @Bean
 	// public DataSource dataSource() {
