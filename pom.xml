@@ -24,6 +24,8 @@
 		<!-- <mysql-connector-java.version>5.1.39</mysql-connector-java.version> -->
 		<!-- 分页 pagehelper版本号 -->
 		<pagehelper.version>5.1.8</pagehelper.version>
+		<!-- NoSql -->
+		<jedis.version>2.9.0</jedis.version>
 
 		<!-- 日志 -->
 		<log4j.version>1.2.17</log4j.version>
@@ -92,7 +94,12 @@
 				<artifactId>log4j</artifactId>
 				<version>${log4j.version}</version>
 			</dependency>
-
+			<!-- redis -->
+			<dependency>
+				<groupId>redis.clients</groupId>
+				<artifactId>jedis</artifactId>
+				<version>${jedis.version}</version>
+			</dependency>
 
 		</dependencies>
 	</dependencyManagement>
@@ -133,5 +140,6 @@
 		<module>Spring-boot-email</module>
 		<module>Spring-boot-kafka</module>
 		<module>Spring-boot-mybatis</module>
+		<module>Spring-boot-redis</module>
 	</modules>
 </project>
