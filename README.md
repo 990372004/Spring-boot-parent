@@ -1,4 +1,4 @@
-# Spring-boot  2.0
+# Spring-boot  2.0   SpringBoot
 本项目将会陆续上传一些spring boot   相关的配置与集成的框架 
 
  如有不懂欢迎联系本人QQ：990372004 本人如有时间可为其解读
@@ -28,6 +28,13 @@
 4、mysql-connector-java 8  数据库连接包
 
 5、log4j 1.2  日志
+
+## Spring-boot-redis
+1、简介：redis是一个key-value存储系统。和Memcached类似，它支持存储的value类型相对更多，包括string(字符串)、
+	list(链表)、set(集合)、zset(sorted set --有序集合)和hash（哈希类型）。redis属于NOSQL，属于缓存技术，区别于传
+	 统的mysql、oracle等持久化工具。redis是非关系型数据库，是缓存工具，运行速度快
+	 
+2、spring-boot-starter-data-redis + jedis 2.9 + jackson-annotations 2.9.8
 
 
 
