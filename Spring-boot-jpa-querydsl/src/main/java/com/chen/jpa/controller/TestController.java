@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.chen.jpa.Page;
-import com.chen.jpa.Pageable;
 import com.chen.jpa.entity.MemberEntity;
 import com.chen.jpa.service.MemberService;
 
