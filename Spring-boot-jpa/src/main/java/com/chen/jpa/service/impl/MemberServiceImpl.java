@@ -10,7 +10,6 @@ import org.springframework.stereotype.Service;
 
 import com.chen.jpa.dao.MemberDao;
 import com.chen.jpa.entity.MemberEntity;
-import com.chen.jpa.repository.MemberRepository;
 import com.chen.jpa.service.MemberService;
 
 /**
@@ -25,8 +24,8 @@ public class MemberServiceImpl extends BaseServiceImpl<MemberEntity, Long> imple
     private MemberDao memberDao;
 	@PersistenceContext
     private EntityManager entityManager;
-	@Autowired
-	private MemberRepository memberRepository;
+//	@Autowired
+//	private MemberRepository memberRepository;
 
 	@Override
 	public MemberEntity findByUsername(String userName) {
