@@ -3,7 +3,15 @@ package com.chen.mybatis.entity;
 import java.io.Serializable;
 import java.util.Date;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
+@Entity
+@Table(name = "t_customer") // 表名
 public class CustomerEntity implements Serializable {
+	@Id //@id注意选择这个javax.persistence
+    @GeneratedValue
     private Integer id;
 
     private String cname;
