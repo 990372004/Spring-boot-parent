@@ -29,6 +29,9 @@
 
 5、log4j 1.2  日志
 
+## Spring-boot-aop-mybatis
+1、添加Spring Boot，Spring Aop，Mybatis，MySQL，Swagger相关依赖。Swagger方便用来测试接口。
+
 ## Spring-boot-redis
 1、简介：redis是一个key-value存储系统。和Memcached类似，它支持存储的value类型相对更多，包括string(字符串)、
 	list(链表)、set(集合)、zset(sorted set --有序集合)和hash（哈希类型）。redis属于NOSQL，属于缓存技术，区别于传
