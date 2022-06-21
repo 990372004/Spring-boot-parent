@@ -20,7 +20,7 @@
 		<mybatis-spring-boot-starter.version>1.3.2</mybatis-spring-boot-starter.version>
 		<druid-spring-boot-starter.version>1.1.10</druid-spring-boot-starter.version>
 		<!-- 导入Mysql数据库链接jar包 -->
-		<mysql-connector-java.version>8.0.13</mysql-connector-java.version>
+		<mysql-connector-java.version>8.0.28</mysql-connector-java.version>
 		<!-- <mysql-connector-java.version>5.1.39</mysql-connector-java.version> -->
 		<!-- 分页 pagehelper版本号 -->
 		<pagehelper.version>5.1.8</pagehelper.version>
