@@ -23,7 +23,7 @@
 		<mysql-connector-java.version>8.0.13</mysql-connector-java.version>
 		<!-- <mysql-connector-java.version>5.1.39</mysql-connector-java.version> -->
 		<!-- 分页 pagehelper版本号 -->
-		<pagehelper.version>5.1.8</pagehelper.version>
+		<pagehelper.version>5.3.1</pagehelper.version>
 		<!-- NoSql -->
 		<jedis.version>2.9.0</jedis.version>
 		<jackson-annotations.version>2.9.8</jackson-annotations.version>
